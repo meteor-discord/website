@@ -29,7 +29,7 @@ const TestimonialCard: React.FC<{ avatar: string; name: string; description: str
       </CardHeader>
 
       <CardContent>
-        <p className="text-muted-foreground">{children}</p>
+        <p className="text-sm text-muted-foreground">{children}</p>
       </CardContent>
     </Card>
   );
