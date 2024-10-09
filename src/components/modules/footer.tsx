@@ -24,9 +24,18 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 md:px-28">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h2 className="mb-2 text-base font-medium text-primary">Resources</h2>
+            <h2 className="mb-2 flex items-center space-x-1 text-base font-medium text-primary">
+              <Image src="/logo.png" width={22} height={22} alt="logo" />
+              <span>Meteor Labs</span>
+            </h2>
+            <p className="text-sm">All rights reserved.</p>
+            <p className="text-sm">Meteor is not affiliated with Discord Inc.</p>
+          </div>
+
+          <div>
+            <h2 className="mb-2 text-base font-medium text-primary">Contact</h2>
             <ul>
-              {resourcesLinks.map(link => (
+              {contactLinks.map(link => (
                 <li key={link.href}>
                   <a href={link.href} className="text-sm transition-colors hover:text-neutral-500">
                     {link.label}
@@ -50,9 +59,9 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="mb-2 text-base font-medium text-primary">Contact</h2>
+            <h2 className="mb-2 text-base font-medium text-primary">Resources</h2>
             <ul>
-              {contactLinks.map(link => (
+              {resourcesLinks.map(link => (
                 <li key={link.href}>
                   <a href={link.href} className="text-sm transition-colors hover:text-neutral-500">
                     {link.label}
@@ -60,15 +69,6 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <h2 className="mb-2 flex items-center space-x-1 text-base font-medium text-primary">
-              <Image src="/logo.png" width={22} height={22} alt="logo" />
-              <span>Meteor Labs</span>
-            </h2>
-            <p className="text-sm">All rights reserved.</p>
-            <p className="text-sm">Meteor is not affiliated with Discord Inc.</p>
           </div>
         </div>
       </div>
