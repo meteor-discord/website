@@ -4,16 +4,8 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/
 
 import { Button } from '../ui/button';
 import Image from 'next/image';
-import Link from 'next/link';
 import { RocketIcon } from '@radix-ui/react-icons';
-
-const SERVERS = [
-  {
-    name: 'Random Server',
-    users: '1.2K',
-    avatar: 'https://via.placeholder.com/200',
-  },
-];
+import { servers } from '~/lib/constants';
 
 const Hero: React.FC = () => {
   const scrollToFeatures = () => {
@@ -57,7 +49,7 @@ const Hero: React.FC = () => {
 
           <div className="mt-4 flex flex-wrap gap-2">
             <TooltipProvider delayDuration={0}>
-              {SERVERS.map(server => (
+              {servers.map(server => (
                 <Tooltip key={server.name}>
                   <TooltipTrigger>
                     <img src={server.avatar} alt={server.name} className="h-9 w-9 rounded-full" />
