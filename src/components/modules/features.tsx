@@ -3,7 +3,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
 
 const Features: React.FC = () => {
   return (
-    <div className="mx-auto mt-6 w-full max-w-[90rem] p-4">
+    <section id="features" className="mx-auto mt-6 w-full max-w-[90rem] p-4">
       <div className="mb-8">
         <h1 className="mb-2 text-3xl font-medium">Features</h1>
         <p className="max-w-[40ch] text-lg text-muted-foreground">See what Meteor has to offer</p>
@@ -43,7 +43,7 @@ const Features: React.FC = () => {
           </CardHeader>
         </Card>
       </div>
-    </div>
+    </section>
   );
 };
 

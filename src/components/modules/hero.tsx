@@ -1,3 +1,5 @@
+'use client';
+
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 
 import { Button } from '../ui/button';
@@ -14,12 +16,19 @@ const SERVERS = [
 ];
 
 const Hero: React.FC = () => {
+  const scrollToFeatures = () => {
+    const element = document.getElementById('features');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+    }
+  };
+
   return (
-    <div className="flex min-h-[75vh] items-center justify-center">
+    <section className="flex min-h-[75vh] items-center justify-center">
       <div className="mx-auto flex w-full max-w-[90rem] flex-col p-4 md:flex-row">
         <div className="m-2 flex flex-1 flex-col justify-center">
           <a href="https://github.com/meteor-discord/" target="_blank" rel="noopener noreferrer">
-            <p className="bg-meteor/15 text-meteor mb-4 flex w-fit items-center justify-center space-x-1 rounded-md px-2 py-0.5">
+            <p className="mb-4 flex w-fit items-center justify-center space-x-1 rounded-md bg-meteor/15 px-2 py-0.5 text-meteor">
               <RocketIcon className="h-3.5 w-3.5" />
               <span>Proudly open-source!</span>
             </p>
@@ -37,8 +46,8 @@ const Hero: React.FC = () => {
                 Get started
               </a>
             </Button>
-            <Button variant="secondary" asChild>
-              <Link href="#features">Learn more</Link>
+            <Button variant="secondary" onClick={scrollToFeatures}>
+              Learn more
             </Button>
           </div>
 
@@ -66,7 +75,10 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="m-2 flex flex-1 flex-col justify-center">
+        <div className="relative m-2 flex flex-1 flex-col justify-center">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="-z-10 h-20 w-52 rounded-full bg-meteor blur-[200px] md:h-40 md:w-80 md:blur-[300px]"></div>
+          </div>
           <Image
             src="/banner-old.png"
             alt="app dir"
@@ -76,7 +88,7 @@ const Hero: React.FC = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
