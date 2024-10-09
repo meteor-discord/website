@@ -1,7 +1,10 @@
+'use client';
+
 import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar';
 import { Card, CardContent, CardHeader } from '~/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '~/components/ui/carousel';
 
+import Autoplay from 'embla-carousel-autoplay';
 import React from 'react';
 
 const TestimonialCard: React.FC<{ avatar: string; name: string; description: string; children: React.ReactNode }> = ({
@@ -32,6 +35,8 @@ const TestimonialCard: React.FC<{ avatar: string; name: string; description: str
 };
 
 const Testimonials: React.FC = () => {
+  const autoplay = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
+
   return (
     <section className="mx-auto mt-32 w-full max-w-[90rem] p-4">
       <div className="mb-8">
@@ -39,7 +44,14 @@ const Testimonials: React.FC = () => {
         <p className="max-w-[40ch] text-lg text-muted-foreground">What our users say about us</p>
       </div>
 
-      <Carousel>
+      <Carousel
+        plugins={[autoplay.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
+        opts={{
+          loop: true,
+        }}
+      >
         <CarouselContent>
           <CarouselItem className="md:basis-1/2 lg:basis-1/3">
             <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
