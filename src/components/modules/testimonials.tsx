@@ -6,6 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 import Autoplay from 'embla-carousel-autoplay';
 import React from 'react';
+import { testimonials } from '~/lib/constants';
 
 const TestimonialCard: React.FC<{ avatar: string; name: string; description: string; children: React.ReactNode }> = ({
   avatar,
@@ -53,46 +54,13 @@ const Testimonials: React.FC = () => {
         }}
       >
         <CarouselContent>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur. Nisi, quos.
-            </TestimonialCard>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur. Nisi, quos.
-            </TestimonialCard>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur. Nisi, quos.
-            </TestimonialCard>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur. Nisi, quos.
-            </TestimonialCard>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur. Nisi, quos.
-            </TestimonialCard>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur. Nisi, quos.
-            </TestimonialCard>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur. Nisi, quos.
-            </TestimonialCard>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <TestimonialCard avatar="https://github.com/vercel.png" name="Some user" description="Position">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur. Nisi, quos.
-            </TestimonialCard>
-          </CarouselItem>
+          {testimonials.map((item, index) => (
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <TestimonialCard avatar={item.avatar} name={item.name} description={item.description}>
+                {item.content}
+              </TestimonialCard>
+            </CarouselItem>
+          ))}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
