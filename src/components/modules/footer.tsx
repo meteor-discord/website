@@ -16,7 +16,7 @@ const developerLinks = [
   },
 ];
 
-const contactLinks = [{ href: 'https://discord.gg/', label: 'Support Server' }];
+const contactLinks = [{ href: 'https://discord.gg/2NtGV5Tjk4', label: 'Support Server' }];
 
 const Footer: React.FC = () => {
   return (
