@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto flex h-[4.2rem] max-w-[1650px] items-center justify-between md:px-16">
         <div className="flex w-full items-center px-6 md:px-0">
           <Link href="/" className="mr-4 flex items-center space-x-1.5 lg:mr-6">
-            <Image src="/logo.png" alt="logo" width={32} height={32} className="h-7 w-7 md:h-6 md:w-6" />
+            <Image src="/icons/logo.png" alt="logo" width={32} height={32} className="h-7 w-7 md:h-6 md:w-6" />
             <span className="hidden font-medium lg:inline-block">Meteor</span>
           </Link>
 

@@ -24,10 +24,10 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 md:px-28">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h2 className="mb-2 flex items-center space-x-1 text-base font-medium text-primary">
-              <Image src="/logo.png" width={22} height={22} alt="logo" />
+            <a className="mb-2 flex items-center space-x-1 text-base font-medium text-primary" href="/">
+              <Image src="/icons/logo.png" width={22} height={22} alt="logo" />
               <span>Meteor Labs</span>
-            </h2>
+            </a>
             <p className="text-sm">All rights reserved.</p>
             <p className="text-sm">Meteor is not affiliated with Discord Inc.</p>
           </div>
