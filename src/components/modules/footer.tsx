@@ -1,22 +1,25 @@
 import Image from 'next/image';
 
+const productLinks = [
+  { href: '/ai-automod', label: 'AI Automod' },
+  { href: '/ticketing', label: 'Ticketing' },
+  { href: '/modmail', label: 'Modmail' },
+  { href: '/birthdays', label: 'Birthdays' },
+];
+
 const resourcesLinks = [
-  { href: '/about', label: 'About' },
-  { href: '/branding', label: 'Branding' },
   { href: '/status', label: 'Status' },
-  { href: '/terms', label: 'Terms of Service' },
   { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/terms', label: 'Terms of Service' },
+  { href: '/become-a-partner', label: 'Become a Partner' },
+  { href: '/branding', label: 'Branding' },
+  { href: '/packages.txt', label: 'Packages.txt' },
 ];
 
-const developerLinks = [
-  { href: 'https://github.com/meteor-discord', label: 'GitHub' },
-  {
-    href: 'https://github.com/meteor-discord/application/blob/main/CONTRIBUTING.md',
-    label: 'How to Contribute',
-  },
+const contactLinks = [
+  { href: 'https://github.com/meteor-discord/', label: 'GitHub' },
+  { href: 'https://discord.gg/2NtGV5Tjk4', label: 'Discord Server' },
 ];
-
-const contactLinks = [{ href: 'https://discord.gg/2NtGV5Tjk4', label: 'Support Server' }];
 
 const Footer: React.FC = () => {
   return (
@@ -33,22 +36,9 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="mb-2 text-base font-medium text-primary">Contact</h2>
-            <ul>
-              {contactLinks.map(link => (
-                <li key={link.href}>
-                  <a href={link.href} className="text-sm transition-colors hover:text-neutral-500">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="mb-2 text-base font-medium text-primary">For developers</h2>
-            <ul>
-              {developerLinks.map(link => (
+            <h2 className="mb-2 text-base font-medium text-primary">Product</h2>
+            <ul className="space-y-0.5">
+              {productLinks.map(link => (
                 <li key={link.href}>
                   <a href={link.href} className="text-sm transition-colors hover:text-neutral-500">
                     {link.label}
@@ -60,8 +50,21 @@ const Footer: React.FC = () => {
 
           <div>
             <h2 className="mb-2 text-base font-medium text-primary">Resources</h2>
-            <ul>
+            <ul className="space-y-0.5">
               {resourcesLinks.map(link => (
+                <li key={link.href}>
+                  <a href={link.href} className="text-sm transition-colors hover:text-neutral-500">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="mb-2 text-base font-medium text-primary">Contact</h2>
+            <ul className="space-y-0.5">
+              {contactLinks.map(link => (
                 <li key={link.href}>
                   <a href={link.href} className="text-sm transition-colors hover:text-neutral-500">
                     {link.label}
