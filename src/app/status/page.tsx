@@ -79,10 +79,37 @@ export default function Status() {
       servers: 2,
       isHighLoad: false,
     },
+    {
+      online: true,
+      shard: 3,
+      uptime: '12 minutes',
+      latency: 99,
+      users: 6240,
+      servers: 23,
+      isHighLoad: false,
+    },
+    {
+      online: true,
+      shard: 4,
+      uptime: '24 minutes',
+      latency: 590,
+      users: 6438,
+      servers: 21,
+      isHighLoad: true,
+    },
+    {
+      online: true,
+      shard: 5,
+      uptime: '24 minutes',
+      latency: 99,
+      users: 5403,
+      servers: 6,
+      isHighLoad: false,
+    },
   ];
 
   return (
-    <div className="mx-auto mt-6 flex w-full max-w-[90rem] flex-col p-4 md:mt-16 md:flex-row">
+    <div className="mx-auto mb-28 mt-6 flex w-full max-w-[90rem] flex-col p-4 md:mt-16 md:flex-row">
       <div className="m-2 flex flex-1 flex-col justify-center">
         <h1 className="mb-2 text-3xl font-medium">Status</h1>
         <p className="max-w-[40ch] text-lg text-muted-foreground">Check the status of Meteor shards</p>

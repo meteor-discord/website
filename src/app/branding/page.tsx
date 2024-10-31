@@ -122,7 +122,7 @@ export default function Branding() {
         </div>
       </section>
 
-      <section className="mx-auto mt-32 flex w-full max-w-[90rem] flex-col p-4 md:flex-row">
+      <section className="mx-auto my-32 flex w-full max-w-[90rem] flex-col p-4 md:flex-row">
         <div className="m-2 flex flex-1 flex-col justify-center">
           <h1 className="mb-6 text-3xl font-medium">Colours</h1>
 

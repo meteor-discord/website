@@ -23,7 +23,7 @@ const contactLinks = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-12 border-t border-neutral-800 bg-[var(--background)] py-12 text-neutral-400 md:mt-32">
+    <footer className="border-t border-neutral-800 bg-[var(--background)] py-12 text-neutral-400">
       <div className="container mx-auto px-6 md:px-28">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>

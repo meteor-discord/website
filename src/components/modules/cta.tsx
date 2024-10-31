@@ -2,7 +2,7 @@ import { Button } from '../ui/button';
 
 const CTA: React.FC = () => {
   return (
-    <section className="mx-auto mt-32 flex w-full max-w-[90rem] items-center justify-center p-4">
+    <section className="mx-auto my-32 flex w-full max-w-[90rem] items-center justify-center p-4">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-medium">Get started</h1>
         <p className="mb-4 max-w-[40ch] text-lg text-muted-foreground">Start using Meteor today, it&apos;s free</p>
