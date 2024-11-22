@@ -32,15 +32,15 @@ const TestimonialCard: React.FC<{ avatar: string; name: string; description: str
 }) => {
   return (
     <Card className="md:basis-1/2 lg:basis-1/3">
-      <CardHeader className="pb-2">
-        <Avatar className="h-12 w-12">
+      <CardHeader className="flex flex-row items-center gap-3 pb-2">
+        <Avatar className="h-11 w-11">
           <AvatarImage src={avatar} />
           <AvatarFallback>?</AvatarFallback>
         </Avatar>
 
         <div>
-          <h1 className="text-xl font-medium">{name}</h1>
-          <p className="text-muted-foreground">{description}</p>
+          <h1 className="font-medium">{name}</h1>
+          <p className="text-sm text-muted-foreground">{description}</p>
         </div>
       </CardHeader>
 
@@ -78,8 +78,8 @@ const Testimonials: React.FC = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="hidden md:flex" />
+        <CarouselNext className="hidden md:flex" />
       </Carousel>
     </section>
   );
