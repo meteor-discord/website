@@ -6,7 +6,23 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 import Autoplay from 'embla-carousel-autoplay';
 import React from 'react';
-import { testimonials } from '~/lib/constants';
+
+interface Testimonial {
+  name: string;
+  avatar: string;
+  description: string;
+  content: string;
+  hidden?: boolean;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    name: 'FTWDawid',
+    avatar: 'https://github.com/ftwdawid.png',
+    description: 'Meteor Contributor',
+    content: 'Working with Meteor is a great experience, and I am very happy to be a part of their community.',
+  },
+];
 
 const TestimonialCard: React.FC<{ avatar: string; name: string; description: string; children: React.ReactNode }> = ({
   avatar,

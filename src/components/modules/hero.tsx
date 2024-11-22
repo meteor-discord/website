@@ -5,7 +5,22 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/
 import { Button } from '../ui/button';
 import Image from 'next/image';
 import { RocketIcon } from '@radix-ui/react-icons';
-import { servers } from '~/lib/constants';
+
+interface Server {
+  name: string;
+  users: string;
+  avatar: string;
+  hidden?: boolean;
+}
+
+const servers: Server[] = [
+  {
+    name: 'Discord',
+    users: '100,000+ Members',
+    avatar:
+      'https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg',
+  },
+];
 
 const Hero: React.FC = () => {
   const scrollToFeatures = () => {
