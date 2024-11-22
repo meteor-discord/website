@@ -13,9 +13,9 @@ export default async function Privacy() {
   }
 
   return (
-    <div className="mx-auto mt-6 flex w-full max-w-[60rem] flex-col p-4 md:mt-16">
-      <p className="mb-2 flex w-fit rounded-md bg-meteor/15 px-2 py-0.5 text-sm text-meteor">Category: Legal</p>
-      <h1 className="text-4xl font-semibold">{privacy.title}</h1>
+    <div className="mx-auto my-6 flex w-full max-w-[60rem] flex-col p-4 md:my-16">
+      <p className="mb-4 flex w-fit rounded-md bg-meteor/15 px-2 py-0.5 text-sm text-meteor">Category: Legal</p>
+      <h1 className="mb-2 text-4xl font-semibold">{privacy.title}</h1>
 
       <TooltipProvider delayDuration={0}>
         <Tooltip>
@@ -36,7 +36,7 @@ export default async function Privacy() {
         </Tooltip>
       </TooltipProvider>
 
-      <hr className="mb-6 mt-4" />
+      <hr className="my-7" />
 
       <MDXContent code={privacy.body} />
     </div>
