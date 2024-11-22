@@ -9,7 +9,7 @@ const CTA: React.FC = () => {
 
         <div className="flex justify-center space-x-2">
           <Button variant="default" asChild>
-            <a href="https://discord.com/oauth2/authorize?client_id=1290627459548581888&permissions=8&integration_type=0&scope=bot">
+            <a href="https://invite.meteors.cc/">
               Get started
             </a>
           </Button>

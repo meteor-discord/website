@@ -22,12 +22,12 @@ const LINKS: { name: string; href: string; disabled?: boolean; external?: boolea
   },
   {
     name: 'Invite',
-    href: 'https://discord.com/oauth2/authorize?client_id=1290627459548581888&permissions=8&integration_type=0&scope=bot',
+    href: 'https://invite.meteors.cc/',
     external: true,
   },
   {
     name: 'Support Server',
-    href: 'https://discord.gg/2NtGV5Tjk4',
+    href: 'https://discord.meteors.cc/',
     external: true,
   },
 ];

@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
           <div className="mt-4 flex items-center gap-2">
             <Button variant="default" asChild>
-              <a href="https://discord.com/oauth2/authorize?client_id=1290627459548581888&permissions=8&integration_type=0&scope=bot">
+              <a href="https://invite.meteors.cc/" target="_blank" rel="noopener noreferrer">
                 Get started
               </a>
             </Button>

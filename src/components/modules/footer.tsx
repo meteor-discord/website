@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const productLinks = [
   { href: '/ai-automod', label: 'AI Automod' },
@@ -18,7 +19,7 @@ const resourcesLinks = [
 
 const contactLinks = [
   { href: 'https://github.com/meteor-discord/', label: 'GitHub' },
-  { href: 'https://discord.gg/2NtGV5Tjk4', label: 'Discord Server' },
+  { href: 'https://discord.meteors.cc/', label: 'Discord Server' },
 ];
 
 const Footer: React.FC = () => {
@@ -27,10 +28,10 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 md:px-28">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <a className="mb-2 flex items-center space-x-1 text-base font-medium text-primary" href="/">
+            <Link className="mb-2 flex items-center space-x-1 text-base font-medium text-primary" href="/">
               <Image src="/icons/logo.png" width={22} height={22} alt="logo" />
               <span>Meteor Labs</span>
-            </a>
+            </Link>
             <p className="text-sm">All rights reserved.</p>
             <p className="text-sm">Meteor is not affiliated with Discord Inc.</p>
           </div>
