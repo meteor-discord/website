@@ -59,11 +59,7 @@ export default function Status() {
           <p className="max-w-[40ch] text-lg text-muted-foreground">Reach us on Discord.</p>
 
           <Button variant="default" asChild className="mt-4">
-            <a
-              href="https://discord.meteors.cc/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://discord.meteors.cc/" target="_blank" rel="noopener noreferrer">
               Discord Server
             </a>
           </Button>

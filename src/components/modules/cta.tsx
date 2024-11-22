@@ -9,9 +9,7 @@ const CTA: React.FC = () => {
 
         <div className="flex justify-center space-x-2">
           <Button variant="default" asChild>
-            <a href="https://invite.meteors.cc/">
-              Get started
-            </a>
+            <a href="https://invite.meteors.cc/">Get started</a>
           </Button>
 
           <Button variant="secondary" asChild>
