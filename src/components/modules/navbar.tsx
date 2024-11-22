@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRightIcon, ExternalLinkIcon, HamburgerMenuIcon } from '@radix-ui/react-icons'; // Assuming you have these icons
+import { ExternalLinkIcon, HamburgerMenuIcon, StarFilledIcon } from '@radix-ui/react-icons';
 
 import { Button } from '~/components/ui/button';
 import Image from 'next/image';
@@ -13,8 +13,8 @@ const LINKS: { name: string; href: string; disabled?: boolean; external?: boolea
     href: '/',
   },
   {
-    name: 'Dashboard',
-    href: '/dashboard',
+    name: 'Status',
+    href: '/status',
   },
   {
     name: 'Documentation',
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
             <span className="hidden font-medium lg:inline-block">Meteor</span>
           </Link>
 
-          <nav className="hidden items-center gap-4 text-sm md:flex lg:gap-6">
+          <nav className="hidden items-center gap-4 text-sm md:flex lg:gap-5">
             {LINKS.map(link => (
               <NavbarLink key={link.name} href={link.href} external={link.external}>
                 {link.name}
@@ -90,9 +90,14 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="flex items-center space-x-2">
+          <Button variant="outline" className="hidden md:flex" asChild>
+            <a href="https://github.meteors.cc/" target="_blank" rel="noopener noreferrer">
+              <StarFilledIcon className="mr-1.5 h-3.5 w-3.5" />
+              <span>Star on GitHub</span>
+            </a>
+          </Button>
           <Button variant="secondary" className="hidden md:flex">
-            <span>Sign in</span>
-            <ArrowRightIcon className="ml-1.5 h-3.5 w-3.5" />
+            Sign in
           </Button>
         </div>
       </div>
@@ -105,10 +110,17 @@ const Navbar: React.FC = () => {
                 {link.name}
               </NavbarLink>
             ))}
-            <Button variant="secondary" className="mt-2 w-full">
-              <span>Sign in</span>
-              <ArrowRightIcon className="ml-1.5 h-3.5 w-3.5" />
-            </Button>
+            <div className="w-full">
+              <Button variant="outline" className="mt-2 w-full" asChild>
+                <a href="https://github.meteors.cc/" target="_blank" rel="noopener noreferrer">
+                  <StarFilledIcon className="mr-1.5 h-3.5 w-3.5" />
+                  <span>Star on GitHub</span>
+                </a>
+              </Button>
+              <Button variant="secondary" className="mt-2 w-full">
+                Sign in
+              </Button>
+            </div>
           </nav>
         </div>
       )}
