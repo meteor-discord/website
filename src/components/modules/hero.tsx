@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
             </p>
           </a>
 
-          <h1 className="mb-2 text-4xl font-medium">Meteor keeps your server safe</h1>
+          <h1 className="mb-2 text-4xl font-medium">Secure your server with Meteor</h1>
           <p className="max-w-[40ch] text-lg text-muted-foreground">
             Meteor is an open-source Discord application that is flexible and easy to use. It includes features that
             improve server security and enhance the user experience.
