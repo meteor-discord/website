@@ -1,123 +1,72 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card';
+'use client';
 
-import { cn } from '~/lib/utils';
+import { Card, CardHeader, CardTitle } from '~/components/ui/card';
 
-function StatusCard({
-  online,
-  shard,
-  uptime,
-  latency,
-  users,
-  servers,
-  isHighLoad,
-}: {
-  online: boolean;
-  shard: number;
-  uptime: string;
-  latency: number;
-  users: number;
-  servers: number;
-  isHighLoad: boolean;
-}) {
-  return (
-    <Card>
-      <CardHeader>
-        <CardDescription>Shard {shard}</CardDescription>
-        <CardTitle className="flex items-center space-x-2 text-xl font-medium">
-          <span
-            className={cn(
-              'inline-flex h-3 w-3 items-center justify-center rounded-full',
-              online ? 'bg-green-500' : 'bg-red-500'
-            )}
-          ></span>
-          <span>
-            {online ? 'Online' : 'Offline'} for {uptime}
-          </span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground">Latency: {latency}ms</p>
-        <p className="text-sm text-muted-foreground">Users: {users}</p>
-        <p className="text-sm text-muted-foreground">Servers: {servers}</p>
+import { Button } from '~/components/ui/button';
+import { useServiceStatus } from '~/hooks/useServiceStatus';
 
-        {isHighLoad && (
-          <p className="mt-3 flex items-center justify-center rounded-md bg-orange-500/15 px-2 py-0.5 text-sm text-orange-500">
-            This shard is experiencing high load
-          </p>
-        )}
-      </CardContent>
-    </Card>
-  );
-}
+const services = [
+  { name: 'Website', target: 'https://meteors.cc/' },
+  { name: 'Discord Application', target: 'https://app.meteors.cc/' },
+  { name: 'Cobalt API', target: 'https://cobalt.meteors.cc/' },
+  { name: 'PostHog', target: 'https://posthog.meteors.cc/' },
+  { name: 'SonarQube', target: 'https://sonarqube.meteors.cc/' },
+];
 
 export default function Status() {
-  const shardPlaceholders = [
-    {
-      online: true,
-      shard: 0,
-      uptime: '23 hours, 59 minutes',
-      latency: 93,
-      users: 1003,
-      servers: 3,
-      isHighLoad: false,
-    },
-    {
-      online: true,
-      shard: 1,
-      uptime: '23 hours, 59 minutes',
-      latency: 103,
-      users: 643,
-      servers: 10,
-      isHighLoad: true,
-    },
-    {
-      online: false,
-      shard: 2,
-      uptime: '5 minutes',
-      latency: 0,
-      users: 2300,
-      servers: 2,
-      isHighLoad: false,
-    },
-    {
-      online: true,
-      shard: 3,
-      uptime: '12 minutes',
-      latency: 99,
-      users: 6240,
-      servers: 23,
-      isHighLoad: false,
-    },
-    {
-      online: true,
-      shard: 4,
-      uptime: '24 minutes',
-      latency: 590,
-      users: 6438,
-      servers: 21,
-      isHighLoad: true,
-    },
-    {
-      online: true,
-      shard: 5,
-      uptime: '24 minutes',
-      latency: 99,
-      users: 5403,
-      servers: 6,
-      isHighLoad: false,
-    },
-  ];
+  const statuses = useServiceStatus(services);
 
   return (
     <div className="mx-auto mb-28 mt-6 flex w-full max-w-[90rem] flex-col p-4 md:mt-16 md:flex-row">
       <div className="m-2 flex flex-1 flex-col justify-center">
         <h1 className="mb-2 text-3xl font-medium">Status</h1>
-        <p className="max-w-[40ch] text-lg text-muted-foreground">Check the status of Meteor shards</p>
+        <p className="max-w-[40ch] text-lg text-muted-foreground">Check the status of Meteor services.</p>
 
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {shardPlaceholders.map(shard => (
-            <StatusCard key={shard.shard} {...shard} />
+        <div className="mt-8 space-y-3">
+          {services.map(service => (
+            <Card key={service.name} className="flex items-center justify-between">
+              <CardHeader>
+                <CardTitle className="text-xl font-medium tracking-normal">{service.name}</CardTitle>
+              </CardHeader>
+              <CardHeader className="p-0 pr-6">
+                <div className="flex flex-row items-center justify-center gap-2">
+                  {statuses[service.name] !== undefined ? (
+                    statuses[service.name] ? (
+                      <p className="font-medium text-green-500">Online</p>
+                    ) : (
+                      <p className="font-medium text-meteor">Offline</p>
+                    )
+                  ) : (
+                    <p className="font-medium text-muted-foreground">Unknown</p>
+                  )}
+                  {statuses[service.name] !== undefined ? (
+                    statuses[service.name] ? (
+                      <div className="h-3.5 w-3.5 rounded-full bg-green-500" />
+                    ) : (
+                      <div className="h-3.5 w-3.5 rounded-full bg-meteor" />
+                    )
+                  ) : (
+                    <div className="h-3.5 w-3.5 rounded-full bg-muted" />
+                  )}
+                </div>
+              </CardHeader>
+            </Card>
           ))}
+        </div>
+
+        <div className="mt-20">
+          <h1 className="mb-2 text-3xl font-medium">Having issues?</h1>
+          <p className="max-w-[40ch] text-lg text-muted-foreground">Reach us on Discord.</p>
+
+          <Button variant="default" asChild className="mt-4">
+            <a
+              href="https://discord.meteors.cc/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Discord Server
+            </a>
+          </Button>
         </div>
       </div>
     </div>
