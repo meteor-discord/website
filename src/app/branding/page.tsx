@@ -4,30 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/com
 import { Button } from '~/components/ui/button';
 import { cn } from '~/lib/utils';
 
-export function BrandingHeading() {
-  return (
-    <section className="flex min-h-[50vh] items-center justify-center">
-      <div className="mx-auto flex w-full max-w-[90rem] flex-col p-4 md:flex-row">
-        <div className="m-2 flex flex-1 flex-col justify-center">
-          <p className="mb-4 flex w-fit items-center justify-center space-x-2 rounded-md bg-orange-500/15 px-2 py-0.5 text-orange-500 md:space-x-1">
-            <ExclamationTriangleIcon className="h-3.5 w-3.5" />
-            <span>Please do not edit our logo or other branding elements</span>
-          </p>
-          <h1 className="mb-2 text-4xl font-medium">Branding</h1>
-          <p className="max-w-[40ch] text-lg text-muted-foreground">
-            This page helps ensure our logo, colors, and brand elements are used correctly, so Meteor stays organized
-            and recognizable everywhere.
-          </p>
-        </div>
-
-        <div className="m-2 flex flex-1 flex-col items-center justify-center">
-          <img src="/icons/logo-full.png" alt="Logo" className="mt-6 h-32 w-32 md:mt-0 md:h-48 md:w-48" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function Branding() {
   const logoVariants = [
     {
@@ -93,7 +69,25 @@ export default function Branding() {
 
   return (
     <>
-      <BrandingHeading />
+      <section className="flex min-h-[50vh] items-center justify-center">
+        <div className="mx-auto flex w-full max-w-[90rem] flex-col p-4 md:flex-row">
+          <div className="m-2 flex flex-1 flex-col justify-center">
+            <p className="mb-4 flex w-fit items-center justify-center space-x-2 rounded-md bg-orange-500/15 px-2 py-0.5 text-orange-500 md:space-x-1">
+              <ExclamationTriangleIcon className="h-3.5 w-3.5" />
+              <span>Please do not edit our logo or other branding elements</span>
+            </p>
+            <h1 className="mb-2 text-4xl font-medium">Branding</h1>
+            <p className="max-w-[40ch] text-lg text-muted-foreground">
+              This page helps ensure our logo, colors, and brand elements are used correctly, so Meteor stays organized
+              and recognizable everywhere.
+            </p>
+          </div>
+
+          <div className="m-2 flex flex-1 flex-col items-center justify-center">
+            <img src="/icons/logo-full.png" alt="Logo" className="mt-6 h-32 w-32 md:mt-0 md:h-48 md:w-48" />
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto flex w-full max-w-[90rem] flex-col p-4 md:flex-row">
         <div className="m-2 flex flex-1 flex-col justify-center">
